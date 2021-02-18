@@ -47,3 +47,5 @@
     $virtualenv gpt_env
     $source gpt_env/bin/activate
     $pip3 install -r requirements.txt
+  
+После завершения установок можно приступать к работе с GPT3.

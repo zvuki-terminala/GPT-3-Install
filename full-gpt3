@@ -47,7 +47,8 @@ sudo cmake ..-DNVML_RETRIEVE_HEADER_ONLINE=True
 make
 sudo make install
 
-cd ~
+cd ..
+cd ..
 #установка python компонентов
 
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -72,5 +73,6 @@ sudo apt install virtualenv
 python3.6 -m pip install numpy -v
 pip3 install torch
 
-cd ru-gpts                                                                                                       virtualenv gpt_env                                                                                               source gpt_env/bin/activate
+cd ru-gpts  virtualenv gpt_env                                                                                               
+source gpt_env/bin/activate
 pip3 install -r requirements.txt

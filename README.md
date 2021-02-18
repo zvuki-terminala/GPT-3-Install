@@ -24,7 +24,7 @@
     
 ## Драйверы NVidia
 
-Если у вас не установлены драйверы NVidia CUDA и Tensorflow запустите скрипт nvidiadrivers:
+Установите драйверы NVidia CUDA и Tensorflow запустив скрипт nvidiadrivers:
 
     $./nvidiadrivers
 

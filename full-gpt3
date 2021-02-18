@@ -34,8 +34,16 @@ sudo apt-get -y install python-pip
 sudo pip install -U setuptools
 python -m pip install --upgrade pip
 
-sudo apt-get install -y libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev
- tk8.6-dev python-tk
+sudo apt-get install -y libtiff5-dev
+sudo apt-get install -y libjpeg8-dev
+sudo apt-get install -y zlib1g-dev
+sudo apt-get install -y libfreetype6-dev
+sudo apt-get install -y liblcms2-dev
+sudo apt-get install -y libwebp-dev
+sudo apt-get install -y tcl8.6-dev
+sudo apt-get install -y tk8.6-dev
+sudo apt-get install -y libtiff5-dev
+sudo apt-get install -y python-tk
 sudo apt-get install -y python-dev
 pip install glances nvidia-ml-py3
 

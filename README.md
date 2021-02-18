@@ -18,7 +18,6 @@
 
     $cd GPT-3-Install
     $mv full-gpt3 ..
-    $mv only-gpt3 ..
     $mv nvidiadrivers ..
     $cd ..
     

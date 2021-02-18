@@ -42,13 +42,15 @@ sudo apt-get install -y libncurses5-dev
 sudo apt-get install -y libncursesw5-dev
 
 git clone https://github.com/Syllo/nvtop.git
-mkdir -p nvtop/build && cd nvtop/build
+mkdir -p nvtop/build
+cd nvtop/build
 sudo cmake ..-DNVML_RETRIEVE_HEADER_ONLINE=True
 make
 sudo make install
 
 cd ..
 cd ..
+
 #установка python компонентов
 
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -81,4 +83,4 @@ virtualenv gpt_env
 
 source gpt_env/bin/activate
 
-pip3 install -r requirements.txt
+pip install -r requirements.txt

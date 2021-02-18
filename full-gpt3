@@ -50,6 +50,7 @@ pip install glances nvidia-ml-py3
 #установка gpt3large
 
 git clone https://github.com/mgrankin/ru-gpts
+cd ru-gpts
 pip3 install transformers==2.8.0
 pip3 install openai
 sudo apt-get install -y openmpi-bin

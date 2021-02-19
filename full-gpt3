@@ -60,3 +60,7 @@ python -m pip install virtualenv
 sudo apt-get install -y virtualenv
 python3.6 -m pip install numpy -v
 pip3 install torch
+pip install torch
+pip install future
+pip install numpy
+pip install transformers

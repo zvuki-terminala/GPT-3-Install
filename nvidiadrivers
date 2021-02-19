@@ -20,9 +20,18 @@ sudo apt update
 sudo apt install cuda-10-1
 sudo apt install libcudnn7
 
-#sudo vi ~/.profile
-# set PATH for cuda 10.1 installation
-#if [ -d "/usr/local/cuda-10.1/bin/" ]; then
-#    export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-#    export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-#fi
+sudo add-apt-repository ppa: graphics-drivers / ppa 
+sudo apt update 
+sudo apt install -y nvidia-driver-460
+
+echo "Update ~/.profile for CUDA"
+echo ""
+echo "sudo vi ~/.profile"
+echo "set PATH for cuda 10.1 installation"
+echo "if [ -d "/usr/local/cuda-10.1/bin/" ]; then"
+echo "   export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}"
+echo "   export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+echo "fi"
+echo ""
+
+echo "Do sudo reboot"

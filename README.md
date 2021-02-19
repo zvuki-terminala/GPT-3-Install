@@ -26,8 +26,22 @@
 Установите драйверы NVidia CUDA и Tensorflow запустив скрипт nvidiadrivers:
 
     $./nvidiadrivers
+   
+Для работы CUDA вам нужно будет обновить файл ~/.profile откройте его для редактирования
 
-После установки система перезагрузится. 
+    $sudo vi ~/.profile
+    
+Добавьте в конец файла следующие строки:
+
+    set PATH for cuda 10.1 installation
+    if [ -d "/usr/local/cuda-10.1/bin/" ]; then
+        export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
+        export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    fi
+
+После обновления файла ~/.profile перезагрузите систему 
+
+    $sudo rebbot
 
 ## Установка GPT-3
 

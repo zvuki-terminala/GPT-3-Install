@@ -64,3 +64,14 @@ pip install torch
 pip install future
 pip install numpy
 pip install transformers
+sudo apt-get install llvm-10-dev
+
+pip install transformers 
+pip install --upgrade --force-reinstall numpy==1.16
+pip install --upgrade --force-reinstall pandas==0.22.0
+sudo apt-get install llvm-10 
+
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+cd ..

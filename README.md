@@ -71,3 +71,6 @@
     $pip3 install -r requirements.txt
   
 После завершения установок можно приступать к работе с GPT3.
+Запустите nvtop, и генератор текста: 
+    $bash ./scripts/generate_ruGPT2Large.sh
+

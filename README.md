@@ -73,5 +73,5 @@
 После завершения установок можно приступать к работе с GPT3.
 Запустите nvtop, и генератор текста: 
     
-    $bash ./scripts/generate_ruGPT2Large.sh
+    $bash ./scripts/generate_ruGPT3Large.sh
 

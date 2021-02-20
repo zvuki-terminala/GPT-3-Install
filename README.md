@@ -10,6 +10,8 @@
 
 ## Подготовка 
 
+
+
 Клонируйте репозиторий git:
 
     $git clone https://github.com/zvuki-terminala/GPT-3-Install.git
@@ -19,7 +21,14 @@
     $cd GPT-3-Install
     $mv full-gpt3 ..
     $mv nvidiadrivers ..
+    $mv conda ..
     $cd ..
+    
+Установите Conda запустив скрипт:
+
+    $./conda
+    
+По ходу установки нажисайте ENTER или вводите yes при запросе.
     
 ## Драйверы NVidia
 

@@ -59,8 +59,6 @@ sudo apt-get install -y openmpi-bin
 python -m pip install virtualenv
 sudo apt-get install -y virtualenv
 python3.6 -m pip install numpy -v
-pip3 install torch
-pip install torch
 pip install future
 pip install numpy
 pip install transformers
@@ -71,11 +69,8 @@ pip install --upgrade --force-reinstall numpy==1.16
 pip install --upgrade --force-reinstall pandas==0.22.0
 sudo apt-get install llvm-10 
 
-git clone https://github.com/NVIDIA/apex
-cd apex
-pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
-cd ..
 conda update conda 
 conda install -c anaconda mkl 
 conda install -c pytorch pytorch torchvision
 pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+pip install --upgrade setuptools

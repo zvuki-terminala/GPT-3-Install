@@ -7,6 +7,7 @@
 - Драйверы NVidia
 - Установка GPT
 - Настройка GPT
+- Запуск веб-сервера на Uvicorn
 
 ## Подготовка 
 
@@ -74,4 +75,57 @@
 Запустите nvtop, и генератор текста: 
     
     $bash ./scripts/generate_ruGPT3Large.sh
+    
+    
+## Запуск веб-сервера на Uvicorn
+
+После проверки работоспособности нейросети можно приступать к запуску приложения с веб-сервером Uvicorn.
+Перейдите в директорию ru-gpts и введите команду:
+
+    $mkdir logs 
+    $conda env create
+    
+Conda проверит и установит дополнительные пакеты если потребуется, а папка logs необходима для записи логов работы Uvicorn'а.
+Следом идет установка Nvidia Apex:
+    
+    $cd ..
+    $git clone https://github.com/NVIDIA/apex
+    $cd apex
+    $pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+    [если выводятся ошибки установки введите]
+    $pip install -v --disable-pip-version-check --no-cache-dir ./
+   
+Переходим к установке Uvicorn:
+
+    $pip install fastapi
+    $pip install uvicorn
+    [если не сработает]
+    $pip3 install fastapi
+    $pip3 install uvicorn
+    
+После установки веб-сервера можно запускать приложение, но перед этим проверьте наличие папки pelevin в папке ru-gpts,
+если она отсутствует поместите модель в папку ru-gpts, после этого можно запускать приложение:
+
+    $git pull
+    $export DEVICE="cuda:0"
+    $export INSTANCE="0"
+    $export MODEL="pelevin"
+    $uvicorn rest:app --host 0.0.0.0 --port 8000 [предварительно надо открыть порт]
+    
+После запуска приложения можно проверить подключение в браузере:
+
+    https://[ip-адрес сервера]:8000/health
+    
+Ответ должен быть true.
+Дополнительно можно открыть интерфейс Fast-API
+
+    https://[ip-адрес сервера]:8000/docs
+    
+Для завершения работы приложения зажмите дважды комбинацию Ctrl + C в bash.           
+    
+
+    
+
+    
+    
 

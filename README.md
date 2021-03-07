@@ -8,6 +8,7 @@
 - Установка GPT
 - Настройка GPT
 - Запуск веб-сервера на Uvicorn
+- Ошибки
 
 ## Подготовка 
 
@@ -83,34 +84,49 @@
 Перейдите в директорию ru-gpts и введите команду:
 
     $mkdir logs 
+    $sudo chmod u+x conda
+    $conda update --all
     $conda env create
     
 Conda проверит и установит дополнительные пакеты если потребуется, а папка logs необходима для записи логов работы Uvicorn'а.
 Следом идет установка Nvidia Apex:
     
-    $cd ..
+    $sudo apt-get update
+    $sudo apt-get upgrade
+    $sudo reboot
+    
+    [Перезагрузка]
+    
     $git clone https://github.com/NVIDIA/apex
     $cd apex
-    $pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
-    [если выводятся ошибки установки введите]
     $pip install -v --disable-pip-version-check --no-cache-dir ./
    
 Переходим к установке Uvicorn:
 
-    $pip install fastapi
-    $pip install uvicorn
-    [если не сработает]
     $pip3 install fastapi
     $pip3 install uvicorn
+    $pip3 install tendo
     
 После установки веб-сервера можно запускать приложение, но перед этим проверьте наличие папки pelevin в папке ru-gpts,
 если она отсутствует поместите модель в папку ru-gpts, после этого можно запускать приложение:
+
+    [предварительно надо открыть порт]
+    
+    $sudo iptables -A INPUT -i lo -j ACCEPT
+    $sudo iptables -A OUTPUT -o lo -j ACCEPT
+    $sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+    $sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+    $sudo iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+
+    $cd ru-gpts
+    
+    [Перед каждым запуском веб-сервера]
 
     $git pull
     $export DEVICE="cuda:0"
     $export INSTANCE="0"
     $export MODEL="pelevin"
-    $uvicorn rest:app --host 0.0.0.0 --port 8000 [предварительно надо открыть порт]
+    $uvicorn rest:app --host 0.0.0.0 --port 8000
     
 После запуска приложения можно проверить подключение в браузере:
 

@@ -70,13 +70,7 @@
     $cd ru-gpts
     $virtualenv gpt_env
     $source gpt_env/bin/activate
-    $pip3 install -r requirements.txt
-  
-После завершения установок можно приступать к работе с GPT3.
-Запустите nvtop, и генератор текста: 
-    
-    $bash ./scripts/generate_ruGPT3Large.sh
-    
+    $pip3 install -r requirements.txt    
     
 ## Запуск веб-сервера на Uvicorn
 
